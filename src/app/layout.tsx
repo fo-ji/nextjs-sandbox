@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 
 import { Inter } from 'next/font/google';
-import './globals.css';
+
+import '@/styles/globals.css';
+import { AppProvider } from '@/providers/app';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,8 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    // ! https://github.com/shadcn/next-contentlayer/issues/7
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }
