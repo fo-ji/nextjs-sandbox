@@ -7,6 +7,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended',
     'next/core-web-vitals',
     'plugin:jsx-a11y/recommended',
     'plugin:react/jsx-runtime',
