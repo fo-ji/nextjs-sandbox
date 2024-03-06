@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '@/styles/globals.css';
+import { Header } from '@/components/ui/header';
 import { AppProvider } from '@/providers/app';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -21,7 +22,12 @@ export default function RootLayout({
     // ! https://github.com/shadcn/next-contentlayer/issues/7
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <main className="flex min-h-screen flex-col">
+            <Header />
+            {children}
+          </main>
+        </AppProvider>
       </body>
     </html>
   );

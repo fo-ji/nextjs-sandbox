@@ -1,8 +1,8 @@
 import { PageLayout } from '@/components/layout/page-layout';
 
-export default function Home() {
+export default function LoginPage() {
   return (
-    <PageLayout title="Home">
+    <PageLayout title="Login">
       <div />
     </PageLayout>
   );
